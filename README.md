@@ -22,28 +22,28 @@ This project is a machine to sell movie tickets. It has a front-end that emulate
 ## Images
 
 This is the initial screen
-[InitialScreen](./UsageImages/Initial-Screen.png)
+![InitialScreen](./UsageImages/Initial-Screen.png)
 
 This is the language selection
-[Language](./UsageImages/Language-Selection.png)
+![Language](./UsageImages/Language-Selection.png)
 
 This is the movie selection
-[Movie](./UsageImages/Movie-Selection.png)
+![Movie](./UsageImages/Movie-Selection.png)
 
 This is the session selection
-[Session](./UsageImages/Session-Selection.png)
+![Session](./UsageImages/Session-Selection.png)
 
 This is the seat selection
-[Seat](./UsageImages/SeatSelection.png)
+![Seat](./UsageImages/SeatSelection.png)
 
 This is the payment screen
-[Payment](./UsageImages/PaymentScreen.png)
+![Payment](./UsageImages/PaymentScreen.png)
 
 This is the member disccount
-[Member](./UsageImages/MemberDisccount.png)
+![Member](./UsageImages/MemberDisccount.png)
 
 This is the message to remove the card
-[Message](./UsageImages/RemoveCard.png)
+![Message](./UsageImages/RemoveCard.png)
 
 This are the printed tickets
-[Tickets](./UsageImages/Ticket.png)
+![Tickets](./UsageImages/Ticket.png)
