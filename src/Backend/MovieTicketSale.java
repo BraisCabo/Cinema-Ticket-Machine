@@ -98,12 +98,12 @@ public class MovieTicketSale extends Operation {
         super.getDispenser().setMenuMode();
         int cont = 0;
         super.cleanDispenser();
-        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Pelicula"));
+        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Pelicula"));
         for (Theater sala : state.getTheaterList()) {
             super.getDispenser().setOption(cont, sala.getFilmData().getName());
             cont++;
         }
-        super.getDispenser().setOption(cont, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
+        super.getDispenser().setOption(cont, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
         char devuelto = super.getDispenser().waitEvent(30);//devuelto sirve para guardar el char que retorna el dispensador para despues convertirlo a un numero
         if ((devuelto == 0) | (super.charToInt(devuelto) == cont)) {
             cancelar = true;
@@ -122,10 +122,10 @@ public class MovieTicketSale extends Operation {
      */
     private void selectSeats(Theater sala, Session sesion) {
         super.getDispenser().setTheaterMode(sala.getMaxRows(), sala.getMaxRCols());
-        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Butacas"));
+        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Butacas"));
         this.presentSeats();
-        super.getDispenser().setOption(0, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
-        super.getDispenser().setOption(1, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Siguiente"));
+        super.getDispenser().setOption(0, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
+        super.getDispenser().setOption(1, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Siguiente"));
         char c = ' ';
         int cont = 0;
         while ((c != 'A') & (c != 'B') & (cont < 4) & (c != 0)) {
@@ -137,7 +137,7 @@ public class MovieTicketSale extends Operation {
                     super.getDispenser().markSeat(row, col, 3);
                     SellSeat.add(new Seat(row, col));
                     cont++;
-                    super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Fila") + row + " " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Asiento") + col);
+                    super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Fila") + row + " " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Asiento") + col);
                 } else if ((!sesion.isOccupied(row, col)) & (SellSeat.contains(new Seat(row, col)))) {
                     super.getDispenser().markSeat(row, col, 2);
                     SellSeat.remove(new Seat(row, col));
@@ -158,7 +158,7 @@ public class MovieTicketSale extends Operation {
      */
     private Session SelectSession(Theater sala) {
         super.cleanDispenser();
-        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Sesion"));
+        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Sesion"));
         super.getDispenser().setImage(sala.getFilmData().getPoster());
         super.getDispenser().setDescription(sala.getFilmData().getDescription());
         int cont = 0;
@@ -167,7 +167,7 @@ public class MovieTicketSale extends Operation {
             super.getDispenser().setOption(cont, hora);
             cont++;
         }
-        super.getDispenser().setOption(cont, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
+        super.getDispenser().setOption(cont, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
         char devuelto = super.getDispenser().waitEvent(30);
         if ((devuelto == 0) | (super.charToInt(devuelto) == cont)) {
             cancelar = true;
@@ -207,17 +207,17 @@ public class MovieTicketSale extends Operation {
         for (Seat butaca : SellSeat) {
             ArrayList<String> text = new ArrayList<>();
             Film peli = sala.getFilmData();
-            text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Entrada") + " " + peli.getName());
+            text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Entrada") + " " + peli.getName());
             text.add("   ===================");
-            text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Sala") + " " + sala.getNumber());
-            text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Hora") + " " + sesion.getHour());
-            text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Fila") + " " + butaca.getRow());
-            text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Asiento") + " " + butaca.getCol());
+            text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Sala") + " " + sala.getNumber());
+            text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Hora") + " " + sesion.getHour());
+            text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Fila") + " " + butaca.getRow());
+            text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Asiento") + " " + butaca.getCol());
             if (payment.getEssocio()){
-                text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Precio") + " " + sala.getPrice()*0.7 + "€");
-                text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Socio") + " ");
+                text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Precio") + " " + sala.getPrice()*0.7 + "€");
+                text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Socio") + " ");
             }else{
-                text.add("   " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Precio") + " " + sala.getPrice() + "€");
+                text.add("   " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Precio") + " " + sala.getPrice() + "€");
             }          
             listaTickets.add(text);
         }
@@ -263,7 +263,7 @@ public class MovieTicketSale extends Operation {
      */
     @Override
     public String getTitle() {
-        return java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Comprar");
+        return java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Comprar");
     }
 
     /**

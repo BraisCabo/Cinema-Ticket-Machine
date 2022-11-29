@@ -40,9 +40,9 @@ public class PerformPayment extends Operation {
         super.getDispenser().setMessageMode();
         super.getDispenser().setTitle(this.getTitle());
         
-        String cobrar = String.valueOf(this.numero) + " " + java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Entradas") + " " + nombrepeli + " " + String.valueOf(this.Precio) + " €";//es una variable auxiliar para poder manejar el string más facilmente
+        String cobrar = String.valueOf(this.numero) + " " + java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Entradas") + " " + nombrepeli + " " + String.valueOf(this.Precio) + " €";//es una variable auxiliar para poder manejar el string más facilmente
         super.getDispenser().setDescription(cobrar);
-        super.getDispenser().setOption(1, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
+        super.getDispenser().setOption(1, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
         if (super.getDispenser().waitEvent(30) != '1') {
             this.estado = false;
         } else {
@@ -50,8 +50,8 @@ public class PerformPayment extends Operation {
             super.getDispenser().waitEvent(1);//esperar para ver como traga la tarjeta y que así parezca más realista
             int cont = 0;//cuenta el numero de veces que se ha intentado realizar la comunicación, al llegar a un cierto numero cancela el pago y vuelve al menú principal
             while (!banco.comunicationAvaiable() & this.estado == true) {
-                super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Comunicacion"));
-                super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Espere"));
+                super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Comunicacion"));
+                super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Espere"));
                 cont++;
                 char c = super.getDispenser().waitEvent(2);//sirve para esperar mientras se intenta encontrar la comunicación
                 if (cont == 3 | c == 'B') {//si el usuario ha pulsado cancelar o ha pasado un tiempo cancelamos el pago
@@ -62,19 +62,19 @@ public class PerformPayment extends Operation {
                  if (listaSocios.contains(super.getDispenser().getCardNumber())){
                     Precio *=0.7; 
                     this.esSocio=true;
-                    super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Socio"));
+                    super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Socio"));
                     super.getDispenser().waitEvent(2);
                  }
                 if (this.estado == true&&banco.doOperation(super.getDispenser().getCardNumber(), Precio)) {
                     this.estado = true;
                     super.cleanDispenser();
                     super.getDispenser().setMessageMode();
-                    super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Rtarjeta"));
-                    super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Tarjetaout"));
+                    super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Rtarjeta"));
+                    super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Tarjetaout"));
                 } else {
                     this.estado = false;
-                    super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Rtarjeta"));
-                    super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Pago"));
+                    super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Rtarjeta"));
+                    super.getDispenser().setDescription(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Pago"));
                 }
             } catch (CommunicationException ex) {
                 Logger.getLogger(PerformPayment.class.getName()).log(Level.SEVERE, null, ex);
@@ -124,7 +124,7 @@ public class PerformPayment extends Operation {
      */
     @Override
     public String getTitle() {
-        return java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Tarjetain");
+        return java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Tarjetain");
     }
     
     public void setListaSocios(HashSet<Long> lista){

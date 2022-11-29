@@ -73,6 +73,6 @@ public class MainMenu extends Operation {
      */
     @Override
     public String getTitle() {
-        return java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Menu");
+        return java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Menu");
     }
 }

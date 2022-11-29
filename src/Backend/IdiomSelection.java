@@ -22,12 +22,12 @@ public class IdiomSelection extends Operation {
     @Override
     public void doOperation() {
         super.cleanDispenser();
-        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Idioma2"));
-        super.getDispenser().setOption(0, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Español"));
-        super.getDispenser().setOption(1, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Ingles"));
-        super.getDispenser().setOption(2, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Euskera"));
-        super.getDispenser().setOption(3, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Catalan"));
-        super.getDispenser().setOption(4, java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
+        super.getDispenser().setTitle(java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Idioma2"));
+        super.getDispenser().setOption(0, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Español"));
+        super.getDispenser().setOption(1, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Ingles"));
+        super.getDispenser().setOption(2, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Euskera"));
+        super.getDispenser().setOption(3, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Catalan"));
+        super.getDispenser().setOption(4, java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Cancelar"));
         switch (super.getDispenser().waitEvent(30)) {
             case 'A':
                 idiom = "es";
@@ -69,6 +69,6 @@ public class IdiomSelection extends Operation {
      */
     @Override
     public String getTitle() {
-        return java.util.ResourceBundle.getBundle("Practica/" + this.getMultiplex().getIdiom()).getString("Idioma");
+        return java.util.ResourceBundle.getBundle("Backend/" + this.getMultiplex().getIdiom()).getString("Idioma");
     }
 }
