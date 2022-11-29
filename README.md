@@ -18,3 +18,32 @@ This project is a machine to sell movie tickets. It has a front-end that emulate
 * You can cancell the purchase of the tickets when you want.
 * If you dont interact with the machine in 30 seconds, it cancells the purchase and go to the initial screen.
 * If you dont retire the credit card in 30 seconds, it saves the card so you dont lose it.
+
+## Images
+
+This is the initial screen
+[InitialScreen](./UsageImages/Initial-Screen.png)
+
+This is the language selection
+[Language](./UsageImages/Language-Selection.png)
+
+This is the movie selection
+[Movie](./UsageImages/Movie-Selection.png)
+
+This is the session selection
+[Session](./UsageImages/Session-Selection.png)
+
+This is the seat selection
+[Seat](./UsageImages/SeatSelection.png)
+
+This is the payment screen
+[Payment](./UsageImages/PaymentScreen.png)
+
+This is the member disccount
+[Member](./UsageImages/MemberDisccount.png)
+
+This is the message to remove the card
+[Message](./UsageImages/RemoveCard.png)
+
+This are the printed tickets
+[Tickets](./UsageImages/Ticket.png)
