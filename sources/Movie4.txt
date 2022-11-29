@@ -1,0 +1,11 @@
+Theatre: 1
+
+Title: Dune
+
+Arrakis, el planeta del desierto, de la familia Harkonnen, queda en manos de la casa Atreides cuando el emperador le cede la explotación de la especia, la materia prima más valiosa de la galaxia y también una droga que amplifica la conciencia y extiende la vida. El duque Leto (Oscar Isaac), la dama Jessica (Rebecca Ferguson) y el hijo de ambos, Paul Atreides (Timothée Chalamet), llegan al planeta para recuperar el nombre de su casa, pero pronto se ven envueltos en una trama de traiciones que les llevará a valorar a los Fremen, habitantes del desierto relacionados con la especia.
+
+Sessions: 16:00 19:00 22:00
+
+Poster: Dune.jpg
+
+Price: 9 €

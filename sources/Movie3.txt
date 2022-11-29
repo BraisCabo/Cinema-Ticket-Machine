@@ -1,0 +1,11 @@
+Theatre: 4
+
+Title: La familia perfecta
+
+Lucía cree llevar una vida modélica con todo bajo control. Siempre volcó sus esfuerzos en el cuidado de su familia ideal. Pero todo se derrumba cuando aparece Sara, la novia de su hijo; una chica joven, libre y deslenguada y, con ella, una familia política muy diferente. A partir de ese momento, Lucía descubrirá que la familia perfecta no era lo que ella pensaba.
+
+Sessions: 15:30 17:30 19:30 21:30
+
+Poster: LaFamiliaPerfecta.jpg
+
+Price: 7 €

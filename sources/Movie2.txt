@@ -1,0 +1,11 @@
+Theatre: 3
+
+Title: La Casa Gucci
+
+Drama criminal en torno al asesinato en 1995 de Maurizio Gucci, nieto del fundador del imperio de la moda Gucci, que apareció asesinado por orden de su exmujer Patrizia Reggiani (la "viuda negra de Italia"). Adaptación del libro de Sara Gay Forden, del 2001, 'The House of Gucci: A Sensational Story of Murder, Madness, Glamour, and Greed'.
+
+Sessions: 15:30 18:30 21:30
+
+Poster: Gucci.jpg
+
+Price: 8 €

@@ -1,0 +1,6 @@
+build/
+nbproject/
+dist/
+serializador.bin
+manifest.mf
+build.xml
